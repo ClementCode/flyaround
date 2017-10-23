@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Fields list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Icao</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Country</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for field in fields %}
+            <tr>
+                <td><a href="{{ path('field_show', { 'id': field.id }) }}">{{ field.id }}</a></td>
+                <td>{{ field.name }}</td>
+                <td>{{ field.icao }}</td>
+                <td>{{ field.latitude }}</td>
+                <td>{{ field.longitude }}</td>
+                <td>{{ field.address }}</td>
+                <td>{{ field.city }}</td>
+                <td>{{ field.zipcode }}</td>
+                <td>{{ field.country }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('field_show', { 'id': field.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

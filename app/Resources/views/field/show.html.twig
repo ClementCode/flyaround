@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Field</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ field.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ field.name }}</td>
+            </tr>
+            <tr>
+                <th>Icao</th>
+                <td>{{ field.icao }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ field.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ field.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ field.address }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ field.city }}</td>
+            </tr>
+            <tr>
+                <th>Zipcode</th>
+                <td>{{ field.zipcode }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ field.country }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('field_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
