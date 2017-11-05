@@ -1,13 +1,13 @@
+wcs_coav_reviews:
+    resource: "@WCSCoavBundle/Controller/ReviewsController.php"
+    type:     annotation
+
+wcs_coav_flight:
+    resource: "@WCSCoavBundle/Controller/FlightController.php"
+    type:     annotation
+
 wcs_coav_field:
     resource: "@WCSCoavBundle/Controller/FieldController.php"
-    type:     annotation
-
-wcs_coav_flight:
-    resource: "@WCSCoavBundle/Controller/FlightController.php"
-    type:     annotation
-
-wcs_coav_flight:
-    resource: "@WCSCoavBundle/Controller/FlightController.php"
     type:     annotation
 
 wcs_coav_reservation:
