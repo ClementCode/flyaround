@@ -1,3 +1,7 @@
+wcs_coav_user:
+    resource: "@WCSCoavBundle/Controller/UserController.php"
+    type:     annotation
+
 wcs_coav_reviews:
     resource: "@WCSCoavBundle/Controller/ReviewsController.php"
     type:     annotation
@@ -22,3 +26,6 @@ wcs_coav:
     resource: "@WCSCoavBundle/Resources/config/routing.yml"
     prefix:   /
 
+wcs_coav_listing:
+    resource: "@WCSCoavBundle/Controller/ListingController.php"
+    type:     annotation

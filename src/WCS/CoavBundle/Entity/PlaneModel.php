@@ -17,7 +17,7 @@ class PlaneModel
     public function __toString()
     {
         // Return [Manufacturer] [Model] - [Places]
-        return $this->manufacturer . " " . $this->model . " - " . $this->planeNbSeats . " Pl";
+        return $this->manufacturer . " " . $this->model . " - " . $this->planeNbSeats . "pl";
     }
 
     /* Automatic methods */

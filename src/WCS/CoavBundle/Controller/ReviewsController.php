@@ -5,7 +5,8 @@ namespace WCS\CoavBundle\Controller;
 use WCS\CoavBundle\Entity\Reviews;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Reviews controller.
@@ -131,6 +132,7 @@ class ReviewsController extends Controller
             ->setAction($this->generateUrl('reviews_delete', array('id' => $review->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
 }
+

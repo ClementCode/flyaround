@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Reservation
 {
+    public function __toString()
+    {
+        // Return
+        return $this->nbReservedSeats . "-" . $this->passengers . "-" . $this->flight;
+    }
+
     /**
      * @var int
      *
@@ -122,7 +128,7 @@ class Reservation
      */
     public function setPassengers($passengers)
     {
-        $this->passengers = $passengers;
+        $this->passenger = $passengers;
 
         return $this;
     }
@@ -195,13 +201,13 @@ class Reservation
     /**
      * Add passenger
      *
-     * @param \WCS\CoavBundle\Entity\User $passengers
+     * @param \WCS\CoavBundle\Entity\User $passenger
      *
      * @return Reservation
      */
-    public function addPassenger(\WCS\CoavBundle\Entity\User $passengers)
+    public function addPassenger(\WCS\CoavBundle\Entity\User $passenger)
     {
-        $this->passengers[] = $passengers;
+        $this->passengers[] = $passenger;
 
         return $this;
     }
@@ -209,10 +215,10 @@ class Reservation
     /**
      * Remove passenger
      *
-     * @param \WCS\CoavBundle\Entity\User $passengers
+     * @param \WCS\CoavBundle\Entity\User $passenger
      */
-    public function removePassenger(\WCS\CoavBundle\Entity\User $passengers)
+    public function removePassenger(\WCS\CoavBundle\Entity\User $passenger)
     {
-        $this->passengers->removeElement($passengers);
+        $this->passengers->removeElement($passenger);
     }
 }

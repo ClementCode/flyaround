@@ -38,7 +38,7 @@ class User
 
 
     /**
-     * @ORM\OneToOne(targetEntity="WCS\CoavBundle\Entity\Flight", mappedBy="pilot")
+     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Flight", mappedBy="pilot")
      */
     private $pilots;
 
@@ -494,5 +494,39 @@ class User
     public function getPilots()
     {
         return $this->pilots;
+    }
+
+    /**
+     * Add reviewAuthor
+     *
+     * @param \WCS\CoavBundle\Entity\Reviews $reviewAuthor
+     *
+     * @return User
+     */
+    public function addReviewAuthor(\WCS\CoavBundle\Entity\Reviews $reviewAuthor)
+    {
+        $this->reviewAuthors[] = $reviewAuthor;
+
+        return $this;
+    }
+
+    /**
+     * Remove reviewAuthor
+     *
+     * @param \WCS\CoavBundle\Entity\Reviews $reviewAuthor
+     */
+    public function removeReviewAuthor(\WCS\CoavBundle\Entity\Reviews $reviewAuthor)
+    {
+        $this->reviewAuthors->removeElement($reviewAuthor);
+    }
+
+    /**
+     * Get reviewAuthors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReviewAuthors()
+    {
+        return $this->reviewAuthors;
     }
 }

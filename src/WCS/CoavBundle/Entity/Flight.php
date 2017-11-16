@@ -84,7 +84,7 @@ class Flight
     private $description;
 
     /**
-     * @ORM\OneToOne(targetEntity="WCS\CoavBundle\Entity\User", inversedBy="pilots")
+     * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\User", inversedBy="pilots")
      * @ORM\JoinColumn(nullable=false)
      */
     private $pilot;
@@ -357,7 +357,29 @@ class Flight
      */
     public function __construct()
     {
-        $this->flights = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->plane = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add plane
+     *
+     * @param \WCS\CoavBundle\Entity\PlaneModel $plane
+     *
+     * @return Flight
+     */
+    public function addPlane(\WCS\CoavBundle\Entity\PlaneModel $plane)
+    {
+        $this->plane[] = $plane;
+        return $this;
+    }
+    /**
+     * Remove plane
+     *
+     * @param \WCS\CoavBundle\Entity\PlaneModel $plane
+     */
+    public function removePlane(\WCS\CoavBundle\Entity\PlaneModel $plane)
+    {
+        $this->plane->removeElement($plane);
     }
 
     /**

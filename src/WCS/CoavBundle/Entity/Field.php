@@ -17,7 +17,7 @@ class Field
     public function __toString()
     {
         // Return [ICAO] - [NAME] [ZIPCODE]
-        return $this->icao . " - " . $this.name . " " . $this->zipcode;
+        return $this->icao . " - " . $this->name;
     }
 
     /* Auto methods */
