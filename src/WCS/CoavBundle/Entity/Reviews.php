@@ -10,8 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="reviews")
  * @ORM\Entity(repositoryClass="WCS\CoavBundle\Repository\ReviewsRepository")
  */
+
 class Reviews
 {
+
     /**
      * @var int
      *

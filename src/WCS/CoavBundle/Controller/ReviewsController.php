@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ReviewsController extends Controller
 {
+
     /**
      * Lists all review entities.
      *
@@ -31,6 +32,8 @@ class ReviewsController extends Controller
             'reviews' => $reviews,
         ));
     }
+
+
 
     /**
      * Creates a new review entity.
@@ -99,6 +102,8 @@ class ReviewsController extends Controller
         ));
     }
 
+
+
     /**
      * Deletes a review entity.
      *
@@ -118,6 +123,9 @@ class ReviewsController extends Controller
 
         return $this->redirectToRoute('reviews_index');
     }
+
+
+
 
     /**
      * Creates a form to delete a review entity.
